@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    <nav id="nav2">
+        <ul>
+            <li>Welcome, {{ user }}</li>
+            <li><a href="{{url_for('logout')}}">Logout</a></li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block body %}
+<div id="chat">
+
+    <div id="rooms_list">
+        <h1>Rooms</h1>
+        {% for room in rooms %}
+           <ul>
+                <li><a href="{{ url_for('room_update', room=room)}}">{{ room }}</a></li>
+           </ul>
+        {% endfor %}
+
+        <div>
+            <form action="{{ url_for('create') }}" method="POST">
+                <input type="text" class="form-control" name="new_room" placeholder="Create new room here">
+                <button type="submit" id="create_room" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="chat_area">
+        <h1 class="badge badge-dark">{{ room }}</h1><br />
+
+        <textarea name="" id="add_item" cols="30" rows="10" readonly>
+            {% if messages %}
+                {% for message in messages %}
+                    <{{ message[0] }}> - [{{ message[1] }}] : {{ message[2] }}{{'\n'}}
+                {% endfor %}
+            {% endif %}
+        </textarea><br/>
+        
+        <input type="text" id="text" autocomplete="off" autofocus class="form-control">
+        <button id="send" class="btn btn-primary">Send</button>
+        <button id="leave_room" type="button" class="btn btn-warning">Leave room</button>
+    </div>
+</div>   
+{% endblock %}

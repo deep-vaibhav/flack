@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap');
+
+body {
+    background-color: white;
+    font-family: 'Zilla Slab', serif;
+}
+#nav1 {
+    border: 1px transparent black;
+    width: 100%;
+    margin: 0;
+    padding: 2px;
+    background: rgb(116, 159, 207);
+    position: fixed;
+    font-style: oblique;
+}
+h3 {
+    font-weight: 800px;
+}
+#login_form {
+    border: 0.5px transparent black;
+    border-radius: 7px;
+    background: rgba(95, 112, 206, 0.5);
+    margin: 4rem;
+    padding: 1rem;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.backform {
+    background: white;
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+}
+img {
+    width: 40rem;
+    height: 40rem;
+    background: rgb(224, 221, 221);
+}
+#login {
+    width: 7rem;
+}
+#div1 {
+    margin-top: 6rem;
+}
+#div1 h2{
+    font-size: 3rem;
+}
+label {
+    font-size: 1.3rem;
+}

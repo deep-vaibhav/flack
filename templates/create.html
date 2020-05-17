@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    <h1>Create a new room</h1>
+{% endblock %}
+
+{% block body %}
+    <form action="{{ url_for('create') }}" method="POST">
+        <input type="text" id="new_room">
+        <button type="submit" id="create_new_room">Create</button>
+    </form>
+{% endblock %}

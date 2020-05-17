@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    
+{% endblock %}
+
+{% block body %}
+
+<nav id="nav1">
+    <h3>Flack</h3>
+</nav>
+
+<div class="backform">
+    <div>
+        <img src="/static/images/pic1.jpg">
+    </div>
+    <div id="div1">
+        <h2>Flack, gather your squad and go gossip!</h2>
+        <form id="login_form" action="{{ url_for('join') }}" method="POST">
+
+            <div class="form-group">
+                <label for="name">What do your friends call you?</label>
+                <input type="text" id="name" name="name" class="form-control" autocomplete="off" autofocus>
+            </div>
+            <button type="submit" id="login" class="btn btn-primary">Go</button>
+    
+        </form>
+    </div>
+</div>
+
+{% endblock %}

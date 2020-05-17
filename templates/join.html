@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block heading%}
+<nav id="nav2">
+    <ul>
+        <li>Welcome, {{ user }}</li>
+        <li> || </li>
+        <li><a href="{{url_for('logout')}}" id="logout">Logout</a></li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block body %}
+
+<div id="div2">
+    <form action="{{ url_for('checkjoin') }}" method="POST">
+        <div class="form-group" id="join_form">
+            <label>Join an existing room or create a new one</label>
+            <input type="text" id="room" name="room" class="form-control" autocomplete="off" autofocus>
+        </div>
+        <button type="submit" id="join_room" class="btn btn-primary">Join</button>
+        <a href="{{ url_for('checkjoin') }}" class="btn btn-primary">Create</a>
+    </form>
+</div>
+
+{% endblock %}
